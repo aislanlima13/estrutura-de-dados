@@ -5,6 +5,7 @@ package metodos_ordenacao;
  * @author Aislan Lima
  */
 public class MergeSort {
+    int teste = 0;
     public void mergeSort(int[] v, int inicio, int fim){
         if(inicio == fim) return;
         
@@ -12,7 +13,7 @@ public class MergeSort {
         
         mergeSort(v, inicio, meio);
         mergeSort(v, meio +1, fim);
-        intercala(v,inicio,meio,fim);
+        intercala(v,inicio,meio,fim);       
     }
     
     public void intercala(int[] v, int inicio, int meio, int fim){
@@ -39,8 +40,10 @@ public class MergeSort {
         for(i = 0; i < (fim-inicio+1); i++){
              v[inicio + i] = aux[i];
         }
+         
+        if(teste == 0)
+            System.out.println("Tempo Gasto MergeSort: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos");
         
-        System.out.println("Tempo Gasto MergeSort: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos");
+        teste++;
     }
-    
 }
