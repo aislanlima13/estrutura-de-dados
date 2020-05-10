@@ -1,10 +1,10 @@
-package metodos_ordenacao.mergeSort;
+package metodos_ordenacao;
 
 /**
  *
  * @author Aislan Lima
  */
-public class Ordenacao {
+public class MergeSort {
     public void mergeSort(int[] v, int inicio, int fim){
         if(inicio == fim) return;
         
@@ -16,6 +16,7 @@ public class Ordenacao {
     }
     
     public void intercala(int[] v, int inicio, int meio, int fim){
+        long  tempoInicio = System.currentTimeMillis();
         int[] aux = new int[fim - inicio + 1];
         int i = inicio;
         int j = meio +1;
@@ -35,7 +36,11 @@ public class Ordenacao {
             aux[k++] = v[j++];
         
         // copiando os valores do vetor ordenado (aux) para o vetor principal (v)
-        for(i = 0; i < (fim-inicio+1); i++)
-            v[inicio + i] = aux[i];
+        for(i = 0; i < (fim-inicio+1); i++){
+             v[inicio + i] = aux[i];
+        }
+        
+        System.out.println("Tempo Gasto MergeSort: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos");
     }
+    
 }

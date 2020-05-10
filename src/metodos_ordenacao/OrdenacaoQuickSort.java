@@ -1,11 +1,12 @@
-package metodos_ordenacao.quickSort;
+package metodos_ordenacao;
 
 /**
  *
  * @author Aislan Lima
  */
-public class Ordenacao {
+public class OrdenacaoQuickSort {
     public void quicksort(int[] v, int esq, int dir) {
+        long  tempoInicio = System.currentTimeMillis();
         int i = esq;
         int j = dir;
         int pivo = v [ (esq+dir)/2 ];
@@ -27,7 +28,11 @@ public class Ordenacao {
             }
         } while (i <= j);
         
-        if (esq < j) quicksort(v,esq,j);
-        if (i < dir) quicksort(v,i,dir);
+        if (esq < j) 
+            quicksort(v,esq,j);
+        else if (i < dir) 
+            quicksort(v,i,dir);
+        else
+            System.out.println("Tempo Gasto QuickSort: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos");
     }
 }

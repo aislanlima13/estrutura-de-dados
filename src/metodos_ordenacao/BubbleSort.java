@@ -8,20 +8,8 @@ import java.util.Scanner;
  * @author Aislan Lima
  */
 public class BubbleSort {
-    public static void main(String[] args) {
-        int[] v = new int[7];
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        
-        for(int i = 0; i < v.length; i++){
-            System.out.println("Insira um valor para posição " + i + " do vetor");
-            v[i] = scanner.nextInt();
-        }
-        
-        bubbleSort(v);
-    }
-    
-    public static void bubbleSort(int[] v){
+    public void bubbleSort(int[] v){
+        long  tempoInicio = System.currentTimeMillis(); // inicia contagem do tempo
         int aux;
         int n = v.length;
         
@@ -34,10 +22,10 @@ public class BubbleSort {
                 }
             }
         }
-        
-        System.out.println("Exibir vetor ordenado: ");
-        for(int i = 0; i < n; i++){
-            System.out.println("Posição " + i + " valor: " + v[i]);
-        }
+        System.out.println("\nTempo Gasto BubbleSort: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos"); // fim contagem do tempo
+//        System.out.println("\n\nExibir vetor ordenado: ");
+//        for(int i = 0; i < n; i++){
+//            System.out.println("Posição " + i + " valor: " + v[i]);
+//        }  
     }
 }

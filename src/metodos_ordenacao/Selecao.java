@@ -9,20 +9,8 @@ import java.util.Scanner;
  * @author Aislan Lima
  */
 public class Selecao {
-    public static void main(String[] args) {
-        int[] v = new int[7];
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        
-        for(int i = 0; i < v.length; i++){
-            System.out.println("Insira um valor para posição " + i + " do vetor");
-            v[i] = scanner.nextInt();
-        }
-        
-        selecao(v);
-    }
-    
-    public static void selecao(int[] v){
+    public void selecao(int[] v){
+        long  tempoInicio = System.currentTimeMillis(); 
         int aux, min;
         int n = v.length;
         
@@ -37,10 +25,11 @@ public class Selecao {
             v[i] = v[min];
             v[min] = aux;
         }
+        System.out.println("\nTempo gasto Seleção: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos");
         
-        System.out.println("Exibir vetor ordenado: ");
-        for(int i = 0; i < n; i++){
-            System.out.println("Posição " + i + " valor: " + v[i]);
-        }
+//        System.out.println("Exibir vetor ordenado: ");
+//        for(int i = 0; i < n; i++){
+//            System.out.println("Posição " + i + " valor: " + v[i]);
+//        }
     }
 }

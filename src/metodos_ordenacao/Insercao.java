@@ -8,21 +8,9 @@ import java.util.Scanner;
  * de acordo com os outros elementos já presentes no vetor.
  * @author Aislan Lima
  */
-public class Insercao {
-    public static void main(String[] args) {
-        int[] v = new int[7];
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        
-        for(int i = 0; i < v.length; i++){
-            System.out.println("Insira um valor para posição " + i + " do vetor");
-            v[i] = scanner.nextInt();
-        }
-        
-        insercao(v);
-    }
-    
-    public static void insercao(int[] v){
+public class Insercao {  
+    public void insercao(int[] v){
+        long  tempoInicio = System.currentTimeMillis(); 
         int marcada;
         int n = v.length;
         
@@ -36,9 +24,11 @@ public class Insercao {
             v[j] = marcada;
         }
         
-        System.out.println("Exibir vetor ordenado: ");
-        for(int i = 0; i < n; i++){
-            System.out.println("Posição " + i + " valor: " + v[i]);
-        }
+        System.out.println("Tempo gasto Inserção: " + (System.currentTimeMillis()-tempoInicio) + " milisegundos");
+        
+//        System.out.println("Exibir vetor ordenado: ");
+//        for(int i = 0; i < n; i++){
+//            System.out.println("Posição " + i + " valor: " + v[i]);
+//        }
     }
 }
