@@ -23,11 +23,11 @@ public class ComparaTempo {
         int[] v = new int[n];
         int i;
         
-        System.out.println("Vetor: ");
-        for(i=0; i<n; i++) {
-            v[i] = aleatorios.nextInt(101);
-            System.out.print(v[i] + " ");
-        }
+//        System.out.println("Vetor: ");
+//        for(i=0; i<n; i++) {
+//            v[i] = aleatorios.nextInt(101);
+//            System.out.print(v[i] + " ");
+//        }
         
         bubble.bubbleSort(v);
         selecao.selecao(v);
